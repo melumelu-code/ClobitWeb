@@ -1,0 +1,9 @@
+.DS_Store
+.DS_Store?
+**/.DS_Store
+.claude/
+Thumbs.db
+
+# 원본 파일명에 특수문자 포함된 원본 이미지 (복사본 사용 중)
+images/app.logo.PNG
+"images/screenshot#1.png"
