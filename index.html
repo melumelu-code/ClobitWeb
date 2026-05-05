@@ -183,16 +183,15 @@
       position: relative;
       width: 236px;
       height: 513px;
-      border: 2.5px solid #111;
-      border-radius: 50px;
       background: #111;
+      border-radius: 50px;
       overflow: hidden;
     }
 
     .phone-frame::before {
       content: '';
       position: absolute;
-      top: 11px;
+      top: 12px;
       left: 50%;
       transform: translateX(-50%);
       width: 78px;
@@ -202,11 +201,27 @@
       z-index: 10;
     }
 
+    .phone-frame::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 4px;
+      background: rgba(255,255,255,0.35);
+      border-radius: 2px;
+      z-index: 10;
+    }
+
     .phone-screenshot {
-      width: 100%;
-      height: 100%;
+      position: absolute;
+      inset: 4px;
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
+      border-radius: 46px;
       object-fit: cover;
-      object-position: top;
+      object-position: center;
       display: block;
     }
 
@@ -363,9 +378,8 @@
       position: relative;
       width: 234px;
       height: 509px;
-      border: 2.5px solid #111;
-      border-radius: 50px;
       background: #111;
+      border-radius: 50px;
       overflow: hidden;
       flex-shrink: 0;
       box-shadow:
@@ -380,7 +394,7 @@
     .iphone-frame::before {
       content: '';
       position: absolute;
-      top: 11px;
+      top: 12px;
       left: 50%;
       transform: translateX(-50%);
       width: 78px;
@@ -390,11 +404,28 @@
       z-index: 10;
     }
 
+    /* Home Indicator */
+    .iphone-frame::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 4px;
+      background: rgba(255,255,255,0.35);
+      border-radius: 2px;
+      z-index: 10;
+    }
+
     .iphone-frame img {
-      width: 100%;
-      height: 100%;
+      position: absolute;
+      inset: 6px 3px 3px 3px;
+      width: calc(100% - 6px);
+      height: calc(100% - 9px);
+      border-radius: 44px;
       object-fit: cover;
-      object-position: top;
+      object-position: center;
       display: block;
     }
 
@@ -577,7 +608,7 @@
 
     @media (max-width: 768px) {
       /* Mobile carousel */
-      .screenshots-header { padding: 0 24px; margin-bottom: 48px; }
+      .screenshots-header { padding: 0 24px; margin-bottom: 40px; }
 
       .screenshots-track-wrap::after { display: block; }
 
@@ -587,8 +618,8 @@
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
-        padding: 16px 24px 40px;
-        gap: 18px;
+        padding: 12px 32px 44px;
+        gap: 16px;
       }
       .screenshots-track::-webkit-scrollbar { display: none; }
 
@@ -610,23 +641,79 @@
       }
 
       .iphone-frame {
-        width: 210px;
-        height: 457px;
+        width: 195px;
+        height: 424px;
+      }
+      .iphone-frame img {
+        position: absolute;
+        inset: 7px 2px 1px 2px;
+        width: calc(100% - 4px);
+        height: calc(100% - 8px);
+        border-radius: 40px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
       }
 
-      #screenshots { padding: 80px 0 90px; }
+      #screenshots { padding: 64px 0 72px; }
+      .screenshots-title { font-size: 1.9rem; }
     }
 
     @media (max-width: 600px) {
-      nav { padding: 0 24px; }
+      nav { padding: 0 20px; }
       .nav-links { display: none; }
 
-      .hero, #features, #download, #contact, footer {
-        padding-left: 24px;
-        padding-right: 24px;
+      /* Hero */
+      .hero {
+        padding: 88px 24px 64px;
+        gap: 40px;
+      }
+      .hero-headline { margin-bottom: 20px; }
+      .hero-sub {
+        font-size: 0.92rem;
+        margin-bottom: 36px;
+      }
+      .hero-cta {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 24px;
+        font-size: 0.9rem;
+      }
+      .phone-frame {
+        width: 196px;
+        height: 426px;
+        border-radius: 44px;
       }
 
-      footer { flex-direction: column; align-items: center; text-align: center; }
+      /* Features */
+      #features { padding: 64px 24px; }
+
+      /* Download */
+      #download {
+        padding: 80px 24px;
+      }
+      .dl-headline { margin-bottom: 36px; }
+      .dl-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 24px;
+      }
+
+      /* Contact */
+      #contact { padding: 52px 24px; }
+      .contact-link {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* Footer */
+      footer {
+        padding: 24px 24px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
     }
   </style>
 </head>
