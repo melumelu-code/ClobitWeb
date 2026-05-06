@@ -9,6 +9,10 @@
   <meta name="google-site-verification" content="GPF0ee8d1YgNSWG8QCxT4X4iSSQqfKufQYMG-6kg0Q0" />
   <meta name="referrer" content="strict-origin" />
 
+  <!-- Security headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -845,8 +849,8 @@
         <h3>Get in touch</h3>
         <p>Questions or feedback? We'd love to hear from you.</p>
       </div>
-      <a href="mailto:clobit.official@gmail.com" class="contact-link">
-        clobit.official@gmail.com
+      <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#108;&#111;&#98;&#105;&#116;&#46;&#111;&#102;&#102;&#105;&#99;&#105;&#97;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="contact-link">
+        &#99;&#108;&#111;&#98;&#105;&#116;&#46;&#111;&#102;&#102;&#105;&#99;&#105;&#97;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;
       </a>
     </div>
   </div>
@@ -855,11 +859,15 @@
   <footer>
     <span class="footer-copy">© 2026 Clobit</span>
     <ul class="footer-links">
-      <li><a href="mailto:clobit.official@gmail.com">Contact</a></li>
+      <li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#108;&#111;&#98;&#105;&#116;&#46;&#111;&#102;&#102;&#105;&#99;&#105;&#97;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Contact</a></li>
       <li><a href="privacy.html">개인정보처리방침</a></li>
       <li><a href="terms.html">이용약관</a></li>
     </ul>
   </footer>
+
+
+  <!-- Clickjacking defense: prevent this page from being embedded in an iframe -->
+  <script>if (window.top !== window.self) { window.top.location = window.self.location; }</script>
 
 </body>
 </html>
