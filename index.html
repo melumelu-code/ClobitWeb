@@ -1097,6 +1097,35 @@
         footer_contact: '문의',
         footer_privacy: '개인정보처리방침',
         footer_terms:   '이용약관',
+      },
+      ja: {
+        nav_features:   '機能',
+        nav_gallery:    'ギャラリー',
+        nav_contact:    'お問い合わせ',
+        hero_label:     'iOS専用',
+        hero_headline:  '服を記憶する、<br>新しい方法。',
+        hero_sub:       'あなただけのファッションアーカイブ。服を記録して、整理して、再発見しよう。',
+        hero_cta:       'App Storeでダウンロード',
+        features_label: '機能',
+        f1_name:        'アーカイブ',
+        f1_tagline:     'すべての服を記憶する',
+        f1_desc:        '持っている服、好きだった服、買いたい服を記録しよう。',
+        f2_name:        '比較',
+        f2_tagline:     '自分のフィットを把握する',
+        f2_desc:        '購入前に2つのアイテムの実寸サイズを並べて比較できます。',
+        f3_name:        '検索',
+        f3_tagline:     '何でもすばやく',
+        f3_desc:        'カテゴリ、カラー、タグ、ステータスでフィルタリングできます。',
+        gallery_eyebrow:'ギャラリー',
+        gallery_title:  'Clobitを体験しよう',
+        gallery_sub:    'See it in action',
+        dl_label:       'アプリをダウンロード',
+        dl_headline:    'あなたのクローゼットを、<br>新しく。',
+        contact_title:  'お問い合わせ',
+        contact_sub:    'ご質問やフィードバックはお気軽にどうぞ。',
+        footer_contact: 'お問い合わせ',
+        footer_privacy: 'プライバシーポリシー',
+        footer_terms:   '利用規約',
       }
     };
 
@@ -1104,6 +1133,7 @@
     var langOptions = [
       { code: 'en', label: 'English' },
       { code: 'ko', label: '한국어'  },
+      { code: 'ja', label: '日本語'  },
     ];
 
     var currentLang = 'en';
@@ -1170,7 +1200,8 @@
     (function() {
       buildDropdown();
       var saved   = localStorage.getItem('clobit-lang');
-      var browser = navigator.language && navigator.language.startsWith('ko') ? 'ko' : 'en';
+      var nav = navigator.language || '';
+      var browser = nav.startsWith('ko') ? 'ko' : nav.startsWith('ja') ? 'ja' : 'en';
       applyLang(saved || browser);
     })();
   </script>
