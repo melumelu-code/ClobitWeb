@@ -1155,6 +1155,64 @@
         footer_contact: 'Contatti',
         footer_privacy: 'Informativa sulla privacy',
         footer_terms:   'Termini di servizio',
+      },
+      fr: {
+        nav_features:   'Fonctionnalités',
+        nav_gallery:    'Galerie',
+        nav_contact:    'Contact',
+        hero_label:     'Disponible sur iOS',
+        hero_headline:  'Une nouvelle façon<br>de se souvenir<br>de vos vêtements.',
+        hero_sub:       'Votre archive de mode personnelle. Enregistrez, organisez et redécouvrez votre garde-robe.',
+        hero_cta:       'Télécharger sur l\'App Store',
+        features_label: 'Fonctionnalités',
+        f1_name:        'Archive',
+        f1_tagline:     'Souvenez-vous de chaque pièce',
+        f1_desc:        'Enregistrez les vêtements que vous possédez, avez aimés ou prévoyez d\'acheter.',
+        f2_name:        'Comparer',
+        f2_tagline:     'Connaissez votre coupe',
+        f2_desc:        'Comparez les mesures de deux articles côte à côte avant d\'acheter.',
+        f3_name:        'Rechercher',
+        f3_tagline:     'Trouvez tout, instantanément',
+        f3_desc:        'Filtrez par catégorie, couleur, tag ou statut — prévu, en possession ou vendu.',
+        gallery_eyebrow:'Galerie',
+        gallery_title:  'Découvrez Clobit',
+        gallery_sub:    'Voyez-le en action',
+        dl_label:       'Obtenir l\'app',
+        dl_headline:    'Votre garde-robe,<br>réinventée.',
+        contact_title:  'Contactez-nous',
+        contact_sub:    'Des questions ou des retours ? Nous serions ravis de vous entendre.',
+        footer_contact: 'Contact',
+        footer_privacy: 'Politique de confidentialité',
+        footer_terms:   'Conditions d\'utilisation',
+      },
+      de: {
+        nav_features:   'Funktionen',
+        nav_gallery:    'Galerie',
+        nav_contact:    'Kontakt',
+        hero_label:     'Verfügbar auf iOS',
+        hero_headline:  'Ein neuer Weg,<br>Kleidung zu<br>erinnern.',
+        hero_sub:       'Dein persönliches Modearchiv. Erfasse, organisiere und entdecke deinen Kleiderschrank neu.',
+        hero_cta:       'Im App Store laden',
+        features_label: 'Funktionen',
+        f1_name:        'Archiv',
+        f1_tagline:     'Jedes Stück in Erinnerung',
+        f1_desc:        'Erfasse Kleidung, die du besitzt, geliebt hast oder kaufen möchtest.',
+        f2_name:        'Vergleichen',
+        f2_tagline:     'Kenne deine Passform',
+        f2_desc:        'Vergleiche Maße von zwei Teilen nebeneinander, bevor du kaufst.',
+        f3_name:        'Suchen',
+        f3_tagline:     'Alles sofort finden',
+        f3_desc:        'Filtere nach Kategorie, Farbe, Tag oder Status — geplant, im Besitz oder verkauft.',
+        gallery_eyebrow:'Galerie',
+        gallery_title:  'Clobit erleben',
+        gallery_sub:    'Sieh es in Aktion',
+        dl_label:       'App herunterladen',
+        dl_headline:    'Dein Kleiderschrank,<br>neu gedacht.',
+        contact_title:  'Kontakt aufnehmen',
+        contact_sub:    'Fragen oder Feedback? Wir freuen uns von dir zu hören.',
+        footer_contact: 'Kontakt',
+        footer_privacy: 'Datenschutzrichtlinie',
+        footer_terms:   'Nutzungsbedingungen',
       }
     };
 
@@ -1164,6 +1222,8 @@
       { code: 'ko', label: '한국어'   },
       { code: 'ja', label: '日本語'   },
       { code: 'it', label: 'Italiano' },
+      { code: 'fr', label: 'Français' },
+      { code: 'de', label: 'Deutsch'  },
     ];
 
     var currentLang = 'en';
@@ -1231,7 +1291,7 @@
       buildDropdown();
       var saved   = localStorage.getItem('clobit-lang');
       var nav = navigator.language || '';
-      var browser = nav.startsWith('ko') ? 'ko' : nav.startsWith('ja') ? 'ja' : nav.startsWith('it') ? 'it' : 'en';
+      var browser = nav.startsWith('ko') ? 'ko' : nav.startsWith('ja') ? 'ja' : nav.startsWith('it') ? 'it' : nav.startsWith('fr') ? 'fr' : nav.startsWith('de') ? 'de' : 'en';
       applyLang(saved || browser);
     })();
   </script>
