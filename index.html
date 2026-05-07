@@ -1126,14 +1126,44 @@
         footer_contact: 'お問い合わせ',
         footer_privacy: 'プライバシーポリシー',
         footer_terms:   '利用規約',
+      },
+      it: {
+        nav_features:   'Funzionalità',
+        nav_gallery:    'Galleria',
+        nav_contact:    'Contatti',
+        hero_label:     'Solo su iOS',
+        hero_headline:  'Un nuovo modo<br>di ricordare<br>i tuoi vestiti.',
+        hero_sub:       'Il tuo archivio di moda personale. Registra, organizza e riscopri il tuo guardaroba.',
+        hero_cta:       'Scarica su App Store',
+        features_label: 'Funzionalità',
+        f1_name:        'Archivio',
+        f1_tagline:     'Ricorda ogni capo',
+        f1_desc:        'Registra i vestiti che possiedi, che hai amato o che vuoi comprare.',
+        f2_name:        'Confronta',
+        f2_tagline:     'Conosci la tua taglia',
+        f2_desc:        'Confronta le misure di due capi affiancati prima di acquistare.',
+        f3_name:        'Cerca',
+        f3_tagline:     'Trova tutto, subito',
+        f3_desc:        'Filtra per categoria, colore, tag o stato — pianificato, in possesso o venduto.',
+        gallery_eyebrow:'Galleria',
+        gallery_title:  'Scopri Clobit',
+        gallery_sub:    'Vedi come funziona',
+        dl_label:       'Scarica l\'app',
+        dl_headline:    'Il tuo guardaroba,<br>reinventato.',
+        contact_title:  'Contattaci',
+        contact_sub:    'Domande o feedback? Siamo qui per aiutarti.',
+        footer_contact: 'Contatti',
+        footer_privacy: 'Informativa sulla privacy',
+        footer_terms:   'Termini di servizio',
       }
     };
 
     /* 언어 목록 — 나중에 여기에만 추가하면 됩니다 */
     var langOptions = [
-      { code: 'en', label: 'English' },
-      { code: 'ko', label: '한국어'  },
-      { code: 'ja', label: '日本語'  },
+      { code: 'en', label: 'English'  },
+      { code: 'ko', label: '한국어'   },
+      { code: 'ja', label: '日本語'   },
+      { code: 'it', label: 'Italiano' },
     ];
 
     var currentLang = 'en';
@@ -1201,7 +1231,7 @@
       buildDropdown();
       var saved   = localStorage.getItem('clobit-lang');
       var nav = navigator.language || '';
-      var browser = nav.startsWith('ko') ? 'ko' : nav.startsWith('ja') ? 'ja' : 'en';
+      var browser = nav.startsWith('ko') ? 'ko' : nav.startsWith('ja') ? 'ja' : nav.startsWith('it') ? 'it' : 'en';
       applyLang(saved || browser);
     })();
   </script>
