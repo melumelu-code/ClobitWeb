@@ -84,6 +84,12 @@
       flex-shrink: 0;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
     .nav-links {
       display: flex;
       gap: 36px;
@@ -101,6 +107,127 @@
     }
 
     .nav-links a:hover { color: var(--text); }
+
+    /* Language selector */
+    .lang-selector {
+      position: relative;
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s, border-radius 0.15s;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--text);
+      color: var(--text);
+    }
+
+    .lang-btn.open {
+      border-color: var(--text);
+      color: var(--text);
+      border-radius: 10px 10px 0 0;
+      border-bottom-color: transparent;
+    }
+
+    .lang-btn svg.globe {
+      width: 13px;
+      height: 13px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .lang-chevron {
+      width: 10px;
+      height: 10px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .lang-btn.open .lang-chevron {
+      transform: rotate(180deg);
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--text);
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-4px);
+      pointer-events: none;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      z-index: 200;
+    }
+
+    .lang-dropdown.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      width: 100%;
+      padding: 8px 12px;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      white-space: nowrap;
+      text-align: left;
+      transition: background 0.1s, color 0.1s;
+    }
+
+    .lang-option:hover {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .lang-option.active {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .lang-option .check {
+      width: 10px;
+      flex-shrink: 0;
+      opacity: 0;
+    }
+
+    .lang-option.active .check {
+      opacity: 1;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -728,22 +855,32 @@
       <img src="images/logo2.png" alt="" class="nav-logo-img">
       Clobit
     </a>
-    <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#screenshots">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#features" data-i18n="nav_features"></a></li>
+        <li><a href="#screenshots" data-i18n="nav_gallery"></a></li>
+        <li><a href="#contact" data-i18n="nav_contact"></a></li>
+      </ul>
+      <div class="lang-selector" id="langSelector">
+        <button class="lang-btn" id="langBtn" onclick="toggleDropdown()">
+          <svg class="globe" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Zm0 2c.55 0 1.42.6 2.22 2H9.78C10.58 4.6 11.45 4 12 4Zm-3.2 2h6.4c.28.62.52 1.29.7 2H8.1c.18-.71.42-1.38.7-2ZM4.07 12c.04-.7.15-1.37.3-2H7.8c-.07.65-.12 1.31-.12 2s.05 1.35.12 2H4.37a9.28 9.28 0 0 1-.3-2Zm.64 4h2.75c.23.71.5 1.38.82 2a8.06 8.06 0 0 1-3.57-2Zm2.75-8H4.7a8.06 8.06 0 0 1 3.58-2c-.32.62-.6 1.29-.82 2ZM12 20c-.55 0-1.42-.6-2.22-2h4.44c-.8 1.4-1.67 2-2.22 2Zm3.2-4H8.8a14.6 14.6 0 0 1-.15-2 14.6 14.6 0 0 1 .15-2H15.2c.1.64.15 1.3.15 2s-.05 1.36-.15 2Zm.42 4c.31-.62.59-1.29.82-2h2.75a8.06 8.06 0 0 1-3.57 2Zm1.1-4c.08-.65.12-1.31.12-2s-.04-1.35-.12-2h3.43c.15.63.26 1.3.3 2-.04.7-.15 1.37-.3 2h-3.43Zm.48-6c-.23-.71-.5-1.38-.82-2a8.06 8.06 0 0 1 3.57 2h-2.75Z"/></svg>
+          <span id="langLabel"></span>
+          <svg class="lang-chevron" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+        </button>
+        <div class="lang-dropdown" id="langDropdown"></div>
+      </div>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-label">Available on iOS</span>
-      <h1 class="hero-headline">A new way<br>to remember<br>clothes.</h1>
-      <p class="hero-sub">Your personal fashion archive. Record, organize, and rediscover your wardrobe.</p>
+      <span class="hero-label" data-i18n="hero_label"></span>
+      <h1 class="hero-headline" data-i18n="hero_headline"></h1>
+      <p class="hero-sub" data-i18n="hero_sub"></p>
       <a href="https://apps.apple.com/kr/app/clobit/id6766518538" class="hero-cta" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        Download on the App Store
+        <span data-i18n="hero_cta"></span>
       </a>
     </div>
     <div class="hero-visual">
@@ -756,7 +893,7 @@
   <!-- FEATURES -->
   <section id="features">
     <div class="features-meta">
-      <span class="sec-label">Features</span>
+      <span class="sec-label" data-i18n="features_label"></span>
     </div>
     <div class="features-grid">
 
@@ -766,9 +903,9 @@
           <rect x="6.5" y="3" width="11" height="18" rx="2.5"/>
           <path d="M6.5 14 A2.5 2.5 0 0 0 9 16.5 L15 16.5 A2.5 2.5 0 0 0 17.5 14"/>
         </svg>
-        <div class="feature-name">Archive</div>
-        <div class="feature-tagline">Remember every piece</div>
-        <p class="feature-desc">Record clothes you own, once loved, or plan to buy.</p>
+        <div class="feature-name" data-i18n="f1_name"></div>
+        <div class="feature-tagline" data-i18n="f1_tagline"></div>
+        <p class="feature-desc" data-i18n="f1_desc"></p>
       </div>
 
       <div class="feature">
@@ -777,9 +914,9 @@
           <rect x="1.5" y="3" width="9" height="18" rx="2.5"/>
           <rect x="13.5" y="3" width="9" height="18" rx="2.5"/>
         </svg>
-        <div class="feature-name">Compare</div>
-        <div class="feature-tagline">Know your fit</div>
-        <p class="feature-desc">Compare measurements side-by-side before you buy.</p>
+        <div class="feature-name" data-i18n="f2_name"></div>
+        <div class="feature-tagline" data-i18n="f2_tagline"></div>
+        <p class="feature-desc" data-i18n="f2_desc"></p>
       </div>
 
       <div class="feature">
@@ -788,9 +925,9 @@
           <circle cx="11" cy="11" r="7"/>
           <path d="m21 21-5.05-5.05"/>
         </svg>
-        <div class="feature-name">Search</div>
-        <div class="feature-tagline">Find anything, instantly</div>
-        <p class="feature-desc">Filter by category, color, tag, or status — planned, keeping, or sold.</p>
+        <div class="feature-name" data-i18n="f3_name"></div>
+        <div class="feature-tagline" data-i18n="f3_tagline"></div>
+        <p class="feature-desc" data-i18n="f3_desc"></p>
       </div>
 
     </div>
@@ -799,34 +936,34 @@
   <!-- SCREENSHOTS -->
   <section id="screenshots">
     <div class="screenshots-header">
-      <p class="screenshots-eyebrow">Gallery</p>
-      <h2 class="screenshots-title">Clobit을 경험해보세요</h2>
-      <p class="screenshots-sub">Experience Clobit</p>
+      <p class="screenshots-eyebrow" data-i18n="gallery_eyebrow"></p>
+      <h2 class="screenshots-title" data-i18n="gallery_title"></h2>
+      <p class="screenshots-sub" data-i18n="gallery_sub"></p>
     </div>
     <div class="screenshots-track-wrap">
       <div class="screenshots-track">
 
         <div class="mockup-wrapper">
           <div class="iphone-frame">
-            <img src="images/screenshot1.JPG" alt="Clobit 앱 화면 1">
+            <img src="images/screenshot1.JPG" alt="Clobit screenshot 1">
           </div>
         </div>
 
         <div class="mockup-wrapper">
           <div class="iphone-frame">
-            <img src="images/screenshot2.JPG" alt="Clobit 앱 화면 2">
+            <img src="images/screenshot2.JPG" alt="Clobit screenshot 2">
           </div>
         </div>
 
         <div class="mockup-wrapper">
           <div class="iphone-frame">
-            <img src="images/screenshot3.PNG" alt="Clobit 앱 화면 3">
+            <img src="images/screenshot3.PNG" alt="Clobit screenshot 3">
           </div>
         </div>
 
         <div class="mockup-wrapper">
           <div class="iphone-frame">
-            <img src="images/screenshot4.PNG" alt="Clobit 앱 화면 4">
+            <img src="images/screenshot4.PNG" alt="Clobit screenshot 4">
           </div>
         </div>
 
@@ -836,11 +973,11 @@
 
   <!-- DOWNLOAD -->
   <section id="download">
-    <p class="dl-label">Get the app</p>
-    <h2 class="dl-headline">Your wardrobe,<br>reimagined.</h2>
+    <p class="dl-label" data-i18n="dl_label"></p>
+    <h2 class="dl-headline" data-i18n="dl_headline"></h2>
     <a href="https://apps.apple.com/kr/app/clobit/id6766518538" class="dl-btn" target="_blank" rel="noopener noreferrer">
       <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-      Download on the App Store
+      <span data-i18n="hero_cta"></span>
     </a>
   </section>
 
@@ -848,8 +985,8 @@
   <div class="contact-row">
     <div id="contact">
       <div class="contact-left">
-        <h3>Get in touch</h3>
-        <p>Questions or feedback? We'd love to hear from you.</p>
+        <h3 data-i18n="contact_title"></h3>
+        <p data-i18n="contact_sub"></p>
       </div>
       <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#108;&#111;&#98;&#105;&#116;&#46;&#111;&#102;&#102;&#105;&#99;&#105;&#97;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="contact-link">
         &#99;&#108;&#111;&#98;&#105;&#116;&#46;&#111;&#102;&#102;&#105;&#99;&#105;&#97;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;
@@ -861,15 +998,152 @@
   <footer>
     <span class="footer-copy">© 2026 Clobit</span>
     <ul class="footer-links">
-      <li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#108;&#111;&#98;&#105;&#116;&#46;&#111;&#102;&#102;&#105;&#99;&#105;&#97;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Contact</a></li>
-      <li><a href="privacy.html">개인정보처리방침</a></li>
-      <li><a href="terms.html">이용약관</a></li>
+      <li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#108;&#111;&#98;&#105;&#116;&#46;&#111;&#102;&#102;&#105;&#99;&#105;&#97;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" data-i18n="footer_contact"></a></li>
+      <li><a href="privacy.html" data-i18n="footer_privacy"></a></li>
+      <li><a href="terms.html" data-i18n="footer_terms"></a></li>
     </ul>
   </footer>
 
-
-  <!-- Clickjacking defense: prevent this page from being embedded in an iframe -->
+  <!-- Clickjacking defense -->
   <script>if (window.top !== window.self) { window.top.location = window.self.location; }</script>
+
+  <!-- i18n -->
+  <script>
+    var translations = {
+      en: {
+        nav_features:   'Features',
+        nav_gallery:    'Gallery',
+        nav_contact:    'Contact',
+        hero_label:     'Available on iOS',
+        hero_headline:  'A new way<br>to remember<br>clothes.',
+        hero_sub:       'Your personal fashion archive. Record, organize, and rediscover your wardrobe.',
+        hero_cta:       'Download on the App Store',
+        features_label: 'Features',
+        f1_name:        'Archive',
+        f1_tagline:     'Remember every piece',
+        f1_desc:        'Record clothes you own, once loved, or plan to buy.',
+        f2_name:        'Compare',
+        f2_tagline:     'Know your fit',
+        f2_desc:        'Compare measurements side-by-side before you buy.',
+        f3_name:        'Search',
+        f3_tagline:     'Find anything, instantly',
+        f3_desc:        'Filter by category, color, tag, or status — planned, keeping, or sold.',
+        gallery_eyebrow:'Gallery',
+        gallery_title:  'Experience Clobit',
+        gallery_sub:    'See it in action',
+        dl_label:       'Get the app',
+        dl_headline:    'Your wardrobe,<br>reimagined.',
+        contact_title:  'Get in touch',
+        contact_sub:    'Questions or feedback? We\'d love to hear from you.',
+        footer_contact: 'Contact',
+        footer_privacy: 'Privacy Policy',
+        footer_terms:   'Terms of Use',
+      },
+      ko: {
+        nav_features:   '기능',
+        nav_gallery:    '갤러리',
+        nav_contact:    '문의',
+        hero_label:     'iOS 전용',
+        hero_headline:  '옷을 기억하는<br>새로운 방법.',
+        hero_sub:       '나만의 패션 아카이브. 옷을 기록하고, 정리하고, 다시 발견하세요.',
+        hero_cta:       'App Store에서 다운로드',
+        features_label: '기능',
+        f1_name:        '아카이브',
+        f1_tagline:     '모든 옷을 기억하세요',
+        f1_desc:        '가지고 있는 옷, 좋아했던 옷, 사고 싶은 옷을 기록하세요.',
+        f2_name:        '비교',
+        f2_tagline:     '내 핏을 파악하세요',
+        f2_desc:        '구매 전 두 아이템의 실측 사이즈를 나란히 비교해보세요.',
+        f3_name:        '검색',
+        f3_tagline:     '무엇이든 빠르게',
+        f3_desc:        '카테고리, 색상, 태그, 상태별로 필터링하세요.',
+        gallery_eyebrow:'갤러리',
+        gallery_title:  'Clobit을 경험해보세요',
+        gallery_sub:    'Experience Clobit',
+        dl_label:       '앱 다운로드',
+        dl_headline:    '나만의 옷장을<br>새롭게.',
+        contact_title:  '문의하기',
+        contact_sub:    '궁금한 점이나 피드백이 있으신가요? 언제든지 연락해 주세요.',
+        footer_contact: '문의',
+        footer_privacy: '개인정보처리방침',
+        footer_terms:   '이용약관',
+      }
+    };
+
+    /* 언어 목록 — 나중에 여기에만 추가하면 됩니다 */
+    var langOptions = [
+      { code: 'en', label: 'English' },
+      { code: 'ko', label: '한국어'  },
+    ];
+
+    var currentLang = 'en';
+    var dropdownOpen = false;
+
+    function applyLang(lang) {
+      currentLang = lang;
+      var t = translations[lang];
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      /* 버튼 레이블 = 현재 언어 이름 */
+      var cur = langOptions.find(function(o) { return o.code === lang; });
+      document.getElementById('langLabel').textContent = cur ? cur.label : lang;
+      /* 드롭다운 항목 active 상태 갱신 */
+      document.querySelectorAll('.lang-option').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      localStorage.setItem('clobit-lang', lang);
+    }
+
+    function buildDropdown() {
+      var dd = document.getElementById('langDropdown');
+      dd.innerHTML = '';
+      langOptions.forEach(function(opt) {
+        var btn = document.createElement('button');
+        btn.className = 'lang-option';
+        btn.dataset.lang = opt.code;
+        btn.innerHTML =
+          '<svg class="check" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,6 4.5,9.5 11,2.5"/></svg>' +
+          opt.label;
+        btn.onclick = function() {
+          applyLang(opt.code);
+          closeDropdown();
+        };
+        dd.appendChild(btn);
+      });
+    }
+
+    function toggleDropdown() {
+      dropdownOpen ? closeDropdown() : openDropdown();
+    }
+
+    function openDropdown() {
+      dropdownOpen = true;
+      document.getElementById('langBtn').classList.add('open');
+      document.getElementById('langDropdown').classList.add('open');
+    }
+
+    function closeDropdown() {
+      dropdownOpen = false;
+      document.getElementById('langBtn').classList.remove('open');
+      document.getElementById('langDropdown').classList.remove('open');
+    }
+
+    /* 바깥 클릭 시 닫기 */
+    document.addEventListener('click', function(e) {
+      var sel = document.getElementById('langSelector');
+      if (sel && !sel.contains(e.target)) closeDropdown();
+    });
+
+    (function() {
+      buildDropdown();
+      var saved   = localStorage.getItem('clobit-lang');
+      var browser = navigator.language && navigator.language.startsWith('ko') ? 'ko' : 'en';
+      applyLang(saved || browser);
+    })();
+  </script>
 
 </body>
 </html>
