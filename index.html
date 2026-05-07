@@ -124,7 +124,7 @@
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 3px 11px;
+      padding: 1px 10px;
       font-family: 'Inter', sans-serif;
       font-size: 0.72rem;
       font-weight: 500;
@@ -148,8 +148,20 @@
       color: var(--text);
       border-radius: 10px 10px 0 0;
       border-bottom-color: var(--bg);
-      margin-bottom: -1px;
-      padding-bottom: 4px;
+      margin-bottom: -2px;
+      padding-bottom: 3px;
+    }
+
+    /* covers the seam between button bottom and dropdown top */
+    .lang-btn.open::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -3px;
+      height: 4px;
+      background: var(--bg);
+      z-index: 1;
     }
 
     .lang-btn svg.globe {
@@ -400,9 +412,15 @@
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto auto auto auto;
+      align-items: start;
     }
 
     .feature {
+      display: grid;
+      grid-row: span 5;
+      grid-template-rows: subgrid;
+      align-items: start;
       padding: 0 44px 0 0;
       border-right: 1px solid var(--border);
     }
@@ -735,9 +753,14 @@
       }
       .hero-visual { order: -1; }
 
-      .features-grid { grid-template-columns: 1fr; }
+      .features-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+      }
 
       .feature {
+        display: block;
+        grid-row: span 1;
         border-right: none;
         border-bottom: 1px solid var(--border);
         padding: 36px 0;
