@@ -121,10 +121,10 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      background: none;
+      background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 5px 12px;
+      padding: 3px 11px;
       font-family: 'Inter', sans-serif;
       font-size: 0.72rem;
       font-weight: 500;
@@ -134,6 +134,8 @@
       transition: border-color 0.15s, color 0.15s, border-radius 0.15s;
       white-space: nowrap;
       user-select: none;
+      position: relative;
+      z-index: 201;
     }
 
     .lang-btn:hover {
@@ -145,13 +147,17 @@
       border-color: var(--text);
       color: var(--text);
       border-radius: 10px 10px 0 0;
-      border-bottom-color: transparent;
+      border-bottom-color: var(--bg);
+      margin-bottom: -1px;
+      padding-bottom: 4px;
     }
 
     .lang-btn svg.globe {
       width: 13px;
       height: 13px;
-      fill: currentColor;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.3;
       flex-shrink: 0;
     }
 
@@ -867,7 +873,12 @@
       </ul>
       <div class="lang-selector" id="langSelector">
         <button class="lang-btn" id="langBtn" onclick="toggleDropdown()">
-          <svg class="globe" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Zm0 2c.55 0 1.42.6 2.22 2H9.78C10.58 4.6 11.45 4 12 4Zm-3.2 2h6.4c.28.62.52 1.29.7 2H8.1c.18-.71.42-1.38.7-2ZM4.07 12c.04-.7.15-1.37.3-2H7.8c-.07.65-.12 1.31-.12 2s.05 1.35.12 2H4.37a9.28 9.28 0 0 1-.3-2Zm.64 4h2.75c.23.71.5 1.38.82 2a8.06 8.06 0 0 1-3.57-2Zm2.75-8H4.7a8.06 8.06 0 0 1 3.58-2c-.32.62-.6 1.29-.82 2ZM12 20c-.55 0-1.42-.6-2.22-2h4.44c-.8 1.4-1.67 2-2.22 2Zm3.2-4H8.8a14.6 14.6 0 0 1-.15-2 14.6 14.6 0 0 1 .15-2H15.2c.1.64.15 1.3.15 2s-.05 1.36-.15 2Zm.42 4c.31-.62.59-1.29.82-2h2.75a8.06 8.06 0 0 1-3.57 2Zm1.1-4c.08-.65.12-1.31.12-2s-.04-1.35-.12-2h3.43c.15.63.26 1.3.3 2-.04.7-.15 1.37-.3 2h-3.43Zm.48-6c-.23-.71-.5-1.38-.82-2a8.06 8.06 0 0 1 3.57 2h-2.75Z"/></svg>
+          <svg class="globe" viewBox="0 0 16 16" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="8" r="6.2"/>
+            <ellipse cx="8" cy="8" rx="2.6" ry="6.2"/>
+            <line x1="1.8" y1="8" x2="14.2" y2="8"/>
+            <path d="M2.4 5.4h11.2M2.4 10.6h11.2"/>
+          </svg>
           <span id="langLabel"></span>
           <svg class="lang-chevron" viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
         </button>
