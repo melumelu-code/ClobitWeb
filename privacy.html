@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>개인정보처리방침 — Clobit</title>
+  <title>Privacy Policy — Clobit</title>
 
   <!-- Security headers (HTML level) -->
   <meta http-equiv="Content-Security-Policy"
@@ -11,7 +11,7 @@
                  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
                  font-src 'self' https://fonts.gstatic.com;
                  img-src 'self';
-                 script-src 'none';
+                 script-src 'unsafe-inline';
                  object-src 'none';
                  base-uri 'self';
                  form-action 'none';" />
@@ -320,107 +320,208 @@
       <img src="images/logo2.png" alt="" class="nav-logo-img">
       Clobit
     </a>
-    <a href="index.html" class="nav-back">
+    <a href="index.html" class="nav-back" id="navBack">
       <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      홈으로
+      <span id="navBackLabel">홈으로</span>
     </a>
   </nav>
 
   <div class="page-wrap">
 
-    <div class="page-header">
-      <p class="page-tag">Legal</p>
-      <h1 class="page-title">개인정보처리방침</h1>
-      <div class="page-meta">
-        <span>시행일: 2026년 1월 1일</span>
-        <span>운영자: 강찬</span>
-        <span>문의: <a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></span>
+    <!-- ── 한국어 ── -->
+    <div id="content-ko">
+      <div class="page-header">
+        <p class="page-tag">Legal</p>
+        <h1 class="page-title">개인정보처리방침</h1>
+        <div class="page-meta">
+          <span>시행일: 2026년 1월 1일</span>
+          <span>운영자: 강찬</span>
+          <span>문의: <a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></span>
+        </div>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">01</p>
+        <h2>수집하는 개인정보 항목</h2>
+        <p>Clobit은 서비스 제공을 위해 다음 정보를 수집합니다.</p>
+        <ul>
+          <li>Apple 로그인을 통한 사용자 식별자 (UID)</li>
+          <li>이메일 주소 (사용자가 공유를 선택한 경우)</li>
+          <li>사용자가 직접 입력한 게시물 정보 (옷 사진, 브랜드, 가격, 카테고리, 메모 등)</li>
+          <li>기기 정보 (버그 신고 시 기기 모델, OS 버전)</li>
+          <li>앱 버전 정보</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">02</p>
+        <h2>개인정보 수집 및 이용 목적</h2>
+        <ul>
+          <li>서비스 로그인 및 계정 관리</li>
+          <li>게시물 데이터 저장 및 동기화</li>
+          <li>버그 신고 및 고객 지원</li>
+          <li>서비스 개선 및 오류 수정</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">03</p>
+        <h2>개인정보 보관 기간</h2>
+        <ul>
+          <li>회원 탈퇴 시 즉시 삭제</li>
+          <li>버그 신고 데이터: 처리 완료 후 90일 이내 삭제</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">04</p>
+        <h2>개인정보 제3자 제공</h2>
+        <p>Clobit은 사용자의 개인정보를 제3자에게 제공하지 않습니다.<br>
+        단, 다음 서비스를 통해 데이터가 처리됩니다.</p>
+        <ul>
+          <li>Apple — 로그인 인증</li>
+          <li>Google Firebase — 데이터 저장 및 인증</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">05</p>
+        <h2>사용자의 권리</h2>
+        <p>사용자는 언제든지 아래를 요청할 수 있습니다.</p>
+        <ul>
+          <li>본인 데이터 열람</li>
+          <li>데이터 수정</li>
+          <li>계정 및 데이터 삭제</li>
+        </ul>
+        <p style="margin-top: 16px;">요청: <a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></p>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">06</p>
+        <h2>데이터 보안</h2>
+        <p>Google Firebase의 보안 시스템을 통해 데이터를 안전하게 보호합니다.<br>
+        모든 데이터는 암호화되어 저장됩니다.</p>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">07</p>
+        <h2>아동 개인정보 보호</h2>
+        <p>Clobit은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">08</p>
+        <h2>개인정보처리방침 변경</h2>
+        <p>본 방침이 변경될 경우 앱 내 공지 또는 이메일을 통해 사전 안내합니다.</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-text">
+          <strong>문의하기</strong>
+          <p>운영자: 강찬</p>
+        </div>
+        <a href="mailto:clobit.official@gmail.com" class="contact-card-link">
+          clobit.official@gmail.com
+        </a>
       </div>
     </div>
 
-    <div class="doc-section">
-      <p class="section-num">01</p>
-      <h2>수집하는 개인정보 항목</h2>
-      <p>Clobit은 서비스 제공을 위해 다음 정보를 수집합니다.</p>
-      <ul>
-        <li>Apple 로그인을 통한 사용자 식별자 (UID)</li>
-        <li>이메일 주소 (사용자가 공유를 선택한 경우)</li>
-        <li>사용자가 직접 입력한 게시물 정보 (옷 사진, 브랜드, 가격, 카테고리, 메모 등)</li>
-        <li>기기 정보 (버그 신고 시 기기 모델, OS 버전)</li>
-        <li>앱 버전 정보</li>
-      </ul>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">02</p>
-      <h2>개인정보 수집 및 이용 목적</h2>
-      <ul>
-        <li>서비스 로그인 및 계정 관리</li>
-        <li>게시물 데이터 저장 및 동기화</li>
-        <li>버그 신고 및 고객 지원</li>
-        <li>서비스 개선 및 오류 수정</li>
-      </ul>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">03</p>
-      <h2>개인정보 보관 기간</h2>
-      <ul>
-        <li>회원 탈퇴 시 즉시 삭제</li>
-        <li>버그 신고 데이터: 처리 완료 후 90일 이내 삭제</li>
-      </ul>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">04</p>
-      <h2>개인정보 제3자 제공</h2>
-      <p>Clobit은 사용자의 개인정보를 제3자에게 제공하지 않습니다.<br>
-      단, 다음 서비스를 통해 데이터가 처리됩니다.</p>
-      <ul>
-        <li>Apple — 로그인 인증</li>
-        <li>Google Firebase — 데이터 저장 및 인증</li>
-      </ul>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">05</p>
-      <h2>사용자의 권리</h2>
-      <p>사용자는 언제든지 아래를 요청할 수 있습니다.</p>
-      <ul>
-        <li>본인 데이터 열람</li>
-        <li>데이터 수정</li>
-        <li>계정 및 데이터 삭제</li>
-      </ul>
-      <p style="margin-top: 16px;">요청: <a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></p>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">06</p>
-      <h2>데이터 보안</h2>
-      <p>Google Firebase의 보안 시스템을 통해 데이터를 안전하게 보호합니다.<br>
-      모든 데이터는 암호화되어 저장됩니다.</p>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">07</p>
-      <h2>아동 개인정보 보호</h2>
-      <p>Clobit은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">08</p>
-      <h2>개인정보처리방침 변경</h2>
-      <p>본 방침이 변경될 경우 앱 내 공지 또는 이메일을 통해 사전 안내합니다.</p>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-card-text">
-        <strong>문의하기</strong>
-        <p>운영자: 강찬</p>
+    <!-- ── English ── -->
+    <div id="content-en" style="display:none">
+      <div class="page-header">
+        <p class="page-tag">Legal</p>
+        <h1 class="page-title">Privacy Policy</h1>
+        <div class="page-meta">
+          <span>Effective date: January 1, 2026</span>
+          <span>Operator: Chan Kang</span>
+          <span>Contact: <a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></span>
+        </div>
       </div>
-      <a href="mailto:clobit.official@gmail.com" class="contact-card-link">
-        clobit.official@gmail.com
-      </a>
+
+      <div class="doc-section">
+        <p class="section-num">01</p>
+        <h2>Information We Collect</h2>
+        <p>Clobit collects the following information to provide its services.</p>
+        <ul>
+          <li>User identifier (UID) via Sign in with Apple</li>
+          <li>Email address (only if the user chooses to share it)</li>
+          <li>Content entered by the user (clothing photos, brand, price, category, notes, etc.)</li>
+          <li>Device information (model and OS version, collected when submitting a bug report)</li>
+          <li>App version information</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">02</p>
+        <h2>How We Use Your Information</h2>
+        <ul>
+          <li>Account login and management</li>
+          <li>Storing and syncing post data</li>
+          <li>Bug reporting and customer support</li>
+          <li>Service improvement and error fixing</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">03</p>
+        <h2>Data Retention</h2>
+        <ul>
+          <li>Deleted immediately upon account deletion</li>
+          <li>Bug report data: deleted within 90 days after the issue is resolved</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">04</p>
+        <h2>Third-Party Data Sharing</h2>
+        <p>Clobit does not sell or share your personal information with third parties.<br>
+        Data is processed through the following services solely to operate the app.</p>
+        <ul>
+          <li>Apple — authentication</li>
+          <li>Google Firebase — data storage and authentication</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">05</p>
+        <h2>Your Rights</h2>
+        <p>You may request any of the following at any time.</p>
+        <ul>
+          <li>Access to your data</li>
+          <li>Correction of your data</li>
+          <li>Deletion of your account and data</li>
+        </ul>
+        <p style="margin-top: 16px;">Contact: <a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></p>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">06</p>
+        <h2>Data Security</h2>
+        <p>Your data is secured through Google Firebase's security infrastructure.<br>
+        All data is stored with encryption.</p>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">07</p>
+        <h2>Children's Privacy</h2>
+        <p>Clobit does not knowingly collect personal information from children under the age of 14.</p>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">08</p>
+        <h2>Changes to This Policy</h2>
+        <p>If this policy is updated, we will notify users in advance via an in-app notice or email.</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-text">
+          <strong>Contact Us</strong>
+          <p>Operator: Chan Kang</p>
+        </div>
+        <a href="mailto:clobit.official@gmail.com" class="contact-card-link">
+          clobit.official@gmail.com
+        </a>
+      </div>
     </div>
 
   </div>
@@ -429,10 +530,26 @@
     <span class="footer-copy">© 2026 Clobit</span>
     <div class="footer-links">
       <a href="mailto:clobit.official@gmail.com">Contact</a>
-      <a href="privacy.html">개인정보처리방침</a>
-      <a href="terms.html">이용약관</a>
+      <a href="privacy.html" id="footerPrivacy">개인정보처리방침</a>
+      <a href="terms.html" id="footerTerms">이용약관</a>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var saved = localStorage.getItem('clobit-lang');
+      var nav = navigator.language || '';
+      var lang = saved || (nav.startsWith('ko') ? 'ko' : 'en');
+      var isKo = (lang === 'ko');
+
+      document.getElementById('content-ko').style.display = isKo ? '' : 'none';
+      document.getElementById('content-en').style.display = isKo ? 'none' : '';
+      document.getElementById('navBackLabel').textContent = isKo ? '홈으로' : 'Home';
+      document.getElementById('footerPrivacy').textContent = isKo ? '개인정보처리방침' : 'Privacy Policy';
+      document.getElementById('footerTerms').textContent = isKo ? '이용약관' : 'Terms of Use';
+      document.documentElement.lang = isKo ? 'ko' : 'en';
+    })();
+  </script>
 
 </body>
 </html>

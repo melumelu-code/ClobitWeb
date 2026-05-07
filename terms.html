@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>이용약관 — Clobit</title>
+  <title>Terms of Use — Clobit</title>
 
   <!-- Security headers (HTML level) -->
   <meta http-equiv="Content-Security-Policy"
@@ -11,7 +11,7 @@
                  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
                  font-src 'self' https://fonts.gstatic.com;
                  img-src 'self';
-                 script-src 'none';
+                 script-src 'unsafe-inline';
                  object-src 'none';
                  base-uri 'self';
                  form-action 'none';" />
@@ -318,109 +318,212 @@
       <img src="images/logo2.png" alt="" class="nav-logo-img">
       Clobit
     </a>
-    <a href="index.html" class="nav-back">
+    <a href="index.html" class="nav-back" id="navBack">
       <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      홈으로
+      <span id="navBackLabel">홈으로</span>
     </a>
   </nav>
 
   <div class="page-wrap">
 
-    <div class="page-header">
-      <p class="page-tag">Legal</p>
-      <h1 class="page-title">이용약관</h1>
-      <div class="page-meta">
-        <span>시행일: 2026년 1월 1일</span>
-        <span>운영자: 강찬</span>
-        <span>문의: <a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></span>
+    <!-- ── 한국어 ── -->
+    <div id="content-ko">
+      <div class="page-header">
+        <p class="page-tag">Legal</p>
+        <h1 class="page-title">이용약관</h1>
+        <div class="page-meta">
+          <span>시행일: 2026년 1월 1일</span>
+          <span>운영자: 강찬</span>
+          <span>문의: <a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></span>
+        </div>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">01</p>
+        <h2>서비스 소개</h2>
+        <p>Clobit은 개인의 패션 아이템을 기록하고 관리할 수 있는 iOS 모바일 애플리케이션입니다.</p>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">02</p>
+        <h2>이용 조건</h2>
+        <ul>
+          <li>만 14세 이상 누구나 이용 가능합니다.</li>
+          <li>Apple 계정을 통한 로그인이 필요합니다.</li>
+          <li>서비스 이용 시 본 약관에 동의한 것으로 간주합니다.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">03</p>
+        <h2>서비스 이용 규칙</h2>
+        <p>다음 행위는 금지됩니다.</p>
+        <ul>
+          <li>타인의 정보를 무단으로 수집하거나 도용하는 행위</li>
+          <li>서비스를 악용하거나 비정상적으로 이용하는 행위</li>
+          <li>불법적인 콘텐츠를 업로드하는 행위</li>
+          <li>서비스의 정상적인 운영을 방해하는 행위</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">04</p>
+        <h2>콘텐츠 소유권</h2>
+        <ul>
+          <li>사용자가 업로드한 사진 및 데이터의 소유권은 사용자에게 있습니다.</li>
+          <li>Clobit은 서비스 제공 목적 외에 사용자 콘텐츠를 사용하지 않습니다.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">05</p>
+        <h2>서비스 중단 및 변경</h2>
+        <ul>
+          <li>운영자는 서비스 내용을 변경하거나 중단할 수 있습니다.</li>
+          <li>중요한 변경사항은 앱 내 공지 또는 이메일로 사전 안내합니다.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">06</p>
+        <h2>면책 조항</h2>
+        <ul>
+          <li>Clobit은 사용자가 서비스를 통해 얻은 정보의 정확성을 보증하지 않습니다.</li>
+          <li>천재지변, 서버 장애 등 불가항력으로 인한 서비스 중단에 대해 책임을 지지 않습니다.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">07</p>
+        <h2>계정 삭제</h2>
+        <ul>
+          <li>사용자는 언제든지 계정을 삭제할 수 있습니다.</li>
+          <li>계정 삭제 시 모든 데이터가 즉시 삭제됩니다.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">08</p>
+        <h2>준거법</h2>
+        <p>본 약관은 대한민국 법령을 따릅니다.</p>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">09</p>
+        <h2>문의</h2>
+        <p>이용약관에 대한 문의사항은 아래로 연락해 주세요.</p>
+        <p><a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-text">
+          <strong>문의하기</strong>
+          <p>운영자: 강찬</p>
+        </div>
+        <a href="mailto:clobit.official@gmail.com" class="contact-card-link">
+          clobit.official@gmail.com
+        </a>
       </div>
     </div>
 
-    <div class="doc-section">
-      <p class="section-num">01</p>
-      <h2>서비스 소개</h2>
-      <p>Clobit은 개인의 패션 아이템을 기록하고 관리할 수 있는 iOS 모바일 애플리케이션입니다.</p>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">02</p>
-      <h2>이용 조건</h2>
-      <ul>
-        <li>만 14세 이상 누구나 이용 가능합니다.</li>
-        <li>Apple 계정을 통한 로그인이 필요합니다.</li>
-        <li>서비스 이용 시 본 약관에 동의한 것으로 간주합니다.</li>
-      </ul>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">03</p>
-      <h2>서비스 이용 규칙</h2>
-      <p>다음 행위는 금지됩니다.</p>
-      <ul>
-        <li>타인의 정보를 무단으로 수집하거나 도용하는 행위</li>
-        <li>서비스를 악용하거나 비정상적으로 이용하는 행위</li>
-        <li>불법적인 콘텐츠를 업로드하는 행위</li>
-        <li>서비스의 정상적인 운영을 방해하는 행위</li>
-      </ul>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">04</p>
-      <h2>콘텐츠 소유권</h2>
-      <ul>
-        <li>사용자가 업로드한 사진 및 데이터의 소유권은 사용자에게 있습니다.</li>
-        <li>Clobit은 서비스 제공 목적 외에 사용자 콘텐츠를 사용하지 않습니다.</li>
-      </ul>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">05</p>
-      <h2>서비스 중단 및 변경</h2>
-      <ul>
-        <li>운영자는 서비스 내용을 변경하거나 중단할 수 있습니다.</li>
-        <li>중요한 변경사항은 앱 내 공지 또는 이메일로 사전 안내합니다.</li>
-      </ul>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">06</p>
-      <h2>면책 조항</h2>
-      <ul>
-        <li>Clobit은 사용자가 서비스를 통해 얻은 정보의 정확성을 보증하지 않습니다.</li>
-        <li>천재지변, 서버 장애 등 불가항력으로 인한 서비스 중단에 대해 책임을 지지 않습니다.</li>
-      </ul>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">07</p>
-      <h2>계정 삭제</h2>
-      <ul>
-        <li>사용자는 언제든지 계정을 삭제할 수 있습니다.</li>
-        <li>계정 삭제 시 모든 데이터가 즉시 삭제됩니다.</li>
-      </ul>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">08</p>
-      <h2>준거법</h2>
-      <p>본 약관은 대한민국 법령을 따릅니다.</p>
-    </div>
-
-    <div class="doc-section">
-      <p class="section-num">09</p>
-      <h2>문의</h2>
-      <p>이용약관에 대한 문의사항은 아래로 연락해 주세요.</p>
-      <p><a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></p>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-card-text">
-        <strong>문의하기</strong>
-        <p>운영자: 강찬</p>
+    <!-- ── English ── -->
+    <div id="content-en" style="display:none">
+      <div class="page-header">
+        <p class="page-tag">Legal</p>
+        <h1 class="page-title">Terms of Use</h1>
+        <div class="page-meta">
+          <span>Effective date: January 1, 2026</span>
+          <span>Operator: Chan Kang</span>
+          <span>Contact: <a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></span>
+        </div>
       </div>
-      <a href="mailto:clobit.official@gmail.com" class="contact-card-link">
-        clobit.official@gmail.com
-      </a>
+
+      <div class="doc-section">
+        <p class="section-num">01</p>
+        <h2>About Clobit</h2>
+        <p>Clobit is an iOS mobile application that lets you record and manage your personal fashion items.</p>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">02</p>
+        <h2>Eligibility</h2>
+        <ul>
+          <li>Available to anyone aged 14 or older.</li>
+          <li>A Sign in with Apple account is required.</li>
+          <li>By using the service, you agree to these Terms.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">03</p>
+        <h2>Prohibited Conduct</h2>
+        <p>The following activities are strictly prohibited.</p>
+        <ul>
+          <li>Collecting or misappropriating other users' information without authorization</li>
+          <li>Misusing or accessing the service in an abnormal manner</li>
+          <li>Uploading illegal or infringing content</li>
+          <li>Interfering with the normal operation of the service</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">04</p>
+        <h2>Content Ownership</h2>
+        <ul>
+          <li>You retain ownership of all photos and data you upload.</li>
+          <li>Clobit will not use your content for any purpose beyond providing the service.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">05</p>
+        <h2>Service Changes and Interruptions</h2>
+        <ul>
+          <li>The operator may modify or discontinue the service at any time.</li>
+          <li>Significant changes will be communicated in advance via in-app notice or email.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">06</p>
+        <h2>Disclaimer</h2>
+        <ul>
+          <li>Clobit does not guarantee the accuracy of information obtained through the service.</li>
+          <li>Clobit is not liable for service interruptions caused by circumstances beyond its control, such as natural disasters or server failures.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">07</p>
+        <h2>Account Deletion</h2>
+        <ul>
+          <li>You may delete your account at any time.</li>
+          <li>All data is permanently deleted immediately upon account deletion.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">08</p>
+        <h2>Governing Law</h2>
+        <p>These Terms are governed by and construed in accordance with the laws of the Republic of Korea.</p>
+      </div>
+
+      <div class="doc-section">
+        <p class="section-num">09</p>
+        <h2>Contact</h2>
+        <p>For any questions regarding these Terms, please reach out to us.</p>
+        <p><a href="mailto:clobit.official@gmail.com">clobit.official@gmail.com</a></p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-text">
+          <strong>Contact Us</strong>
+          <p>Operator: Chan Kang</p>
+        </div>
+        <a href="mailto:clobit.official@gmail.com" class="contact-card-link">
+          clobit.official@gmail.com
+        </a>
+      </div>
     </div>
 
   </div>
@@ -429,10 +532,26 @@
     <span class="footer-copy">© 2026 Clobit</span>
     <div class="footer-links">
       <a href="mailto:clobit.official@gmail.com">Contact</a>
-      <a href="privacy.html">개인정보처리방침</a>
-      <a href="terms.html">이용약관</a>
+      <a href="privacy.html" id="footerPrivacy">개인정보처리방침</a>
+      <a href="terms.html" id="footerTerms">이용약관</a>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var saved = localStorage.getItem('clobit-lang');
+      var nav = navigator.language || '';
+      var lang = saved || (nav.startsWith('ko') ? 'ko' : 'en');
+      var isKo = (lang === 'ko');
+
+      document.getElementById('content-ko').style.display = isKo ? '' : 'none';
+      document.getElementById('content-en').style.display = isKo ? 'none' : '';
+      document.getElementById('navBackLabel').textContent = isKo ? '홈으로' : 'Home';
+      document.getElementById('footerPrivacy').textContent = isKo ? '개인정보처리방침' : 'Privacy Policy';
+      document.getElementById('footerTerms').textContent = isKo ? '이용약관' : 'Terms of Use';
+      document.documentElement.lang = isKo ? 'ko' : 'en';
+    })();
+  </script>
 
 </body>
 </html>
