@@ -10,7 +10,7 @@
   <meta name="referrer" content="strict-origin" />
 
   <!-- Security headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'none';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: file:; base-uri 'self'; form-action 'none';" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
 
   <!-- Preload local font so it's ready before first paint -->
@@ -318,56 +318,30 @@
       flex-shrink: 0;
     }
 
-    /* ── PHONE MOCKUP ── */
+    /* ── HERO IMAGE ── */
     .hero-visual {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .phone-frame {
-      position: relative;
-      width: 236px;
-      height: 513px;
-      background: #111;
-      border-radius: 50px;
+    .hero-img-wrap {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 18px;
       overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .phone-frame::before {
-      content: '';
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 66px;
-      height: 17px;
-      background: #111;
-      border-radius: 9px;
-      z-index: 10;
+    .hero-img-wrap:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 72px rgba(0,0,0,0.16), 0 12px 32px rgba(0,0,0,0.10);
     }
 
-    .phone-frame::after {
-      content: '';
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90px;
-      height: 4px;
-      background: rgba(255,255,255,0.35);
-      border-radius: 2px;
-      z-index: 10;
-    }
-
-    .phone-screenshot {
-      position: absolute;
-      inset: 4px;
-      width: calc(100% - 8px);
-      height: calc(100% - 8px);
-      border-radius: 46px;
-      object-fit: cover;
-      object-position: center;
+    .hero-img-wrap img {
+      width: 100%;
+      height: auto;
       display: block;
     }
 
@@ -525,82 +499,44 @@
       padding: 24px 52px 32px;
     }
 
-    /* iPhone mockup frame */
-    .iphone-frame {
-      position: relative;
-      width: 234px;
-      height: 509px;
-      background: #111;
-      border-radius: 50px;
+    /* Screenshot cards */
+    .screenshot-card {
+      max-width: 280px;
+      width: 100%;
+      border-radius: 16px;
       overflow: hidden;
       flex-shrink: 0;
-      box-shadow:
-        0 2px 0 2px #2a2a2a,
-        0 30px 70px rgba(0,0,0,0.18),
-        0 10px 30px rgba(0,0,0,0.10);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.10), 0 6px 20px rgba(0,0,0,0.06);
       transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
                   box-shadow 0.35s ease;
+      background: var(--bg);
     }
 
-    /* Dynamic Island */
-    .iphone-frame::before {
-      content: '';
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 66px;
-      height: 17px;
-      background: #111;
-      border-radius: 9px;
-      z-index: 10;
-    }
-
-    /* Home Indicator */
-    .iphone-frame::after {
-      content: '';
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90px;
-      height: 4px;
-      background: rgba(255,255,255,0.35);
-      border-radius: 2px;
-      z-index: 10;
-    }
-
-    .iphone-frame img {
-      position: absolute;
-      inset: 6px 3px 3px 3px;
-      width: calc(100% - 6px);
-      height: calc(100% - 9px);
-      border-radius: 44px;
-      object-fit: cover;
-      object-position: center;
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
       display: block;
     }
 
     /* Stagger: 2nd and 4th card lifted */
-    .mockup-wrapper:nth-child(2) .iphone-frame,
-    .mockup-wrapper:nth-child(4) .iphone-frame {
+    .mockup-wrapper:nth-child(2) .screenshot-card,
+    .mockup-wrapper:nth-child(4) .screenshot-card {
       transform: translateY(-20px);
     }
 
-    .mockup-wrapper:hover .iphone-frame {
-      box-shadow:
-        0 2px 0 2px #2a2a2a,
-        0 40px 90px rgba(0,0,0,0.22),
-        0 14px 40px rgba(0,0,0,0.12);
+    .mockup-wrapper:hover .screenshot-card {
+      box-shadow: 0 24px 64px rgba(0,0,0,0.14), 0 10px 28px rgba(0,0,0,0.08);
     }
 
-    .mockup-wrapper:nth-child(1):hover .iphone-frame,
-    .mockup-wrapper:nth-child(3):hover .iphone-frame {
+    .mockup-wrapper:nth-child(1):hover .screenshot-card,
+    .mockup-wrapper:nth-child(3):hover .screenshot-card,
+    .mockup-wrapper:nth-child(5):hover .screenshot-card,
+    .mockup-wrapper:nth-child(6):hover .screenshot-card {
       transform: translateY(-10px);
     }
 
-    .mockup-wrapper:nth-child(2):hover .iphone-frame,
-    .mockup-wrapper:nth-child(4):hover .iphone-frame {
+    .mockup-wrapper:nth-child(2):hover .screenshot-card,
+    .mockup-wrapper:nth-child(4):hover .screenshot-card {
       transform: translateY(-30px);
     }
 
@@ -729,9 +665,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
-      .iphone-frame {
-        width: 200px;
-        height: 435px;
+      .screenshot-card {
+        max-width: 240px;
       }
       .screenshots-track { gap: 20px; }
     }
@@ -793,24 +728,17 @@
       }
 
       /* Reset stagger on mobile */
-      .mockup-wrapper:nth-child(2) .iphone-frame,
-      .mockup-wrapper:nth-child(4) .iphone-frame {
+      .mockup-wrapper:nth-child(2) .screenshot-card,
+      .mockup-wrapper:nth-child(4) .screenshot-card {
         transform: none;
       }
-      .mockup-wrapper:nth-child(1):hover .iphone-frame,
-      .mockup-wrapper:nth-child(2):hover .iphone-frame,
-      .mockup-wrapper:nth-child(3):hover .iphone-frame,
-      .mockup-wrapper:nth-child(4):hover .iphone-frame {
+      .mockup-wrapper:hover .screenshot-card {
         transform: none;
       }
 
-      .iphone-frame {
-        width: 195px;
-        height: 424px;
-        border-radius: 36px;
-      }
-      .iphone-frame img {
-        border-radius: 32px;
+      .screenshot-card {
+        max-width: 220px;
+        border-radius: 14px;
       }
 
       #screenshots { padding: 64px 0 72px; }
@@ -837,13 +765,9 @@
         padding: 16px 24px;
         font-size: 0.9rem;
       }
-      .phone-frame {
-        width: 196px;
-        height: 426px;
-        border-radius: 36px;
-      }
-      .phone-screenshot {
-        border-radius: 32px;
+      .hero-img-wrap {
+        max-width: 260px;
+        border-radius: 14px;
       }
 
       /* Features */
@@ -929,8 +853,8 @@
       </a>
     </div>
     <div class="hero-visual">
-      <div class="phone-frame">
-        <img src="images/ENscreenshot1.PNG" alt="Clobit app screenshot" class="phone-screenshot">
+      <div class="hero-img-wrap">
+        <img src="images/appstore_v5_01.png" alt="Clobit app screenshot">
       </div>
     </div>
   </section>
@@ -989,32 +913,38 @@
       <div class="screenshots-track">
 
         <div class="mockup-wrapper">
-          <div class="iphone-frame">
-            <img src="images/ENscreenshot1.PNG" alt="Clobit screenshot 1">
+          <div class="screenshot-card">
+            <img src="images/appstore_v5_01.png" alt="Clobit screenshot 1">
           </div>
         </div>
 
         <div class="mockup-wrapper">
-          <div class="iphone-frame">
-            <img src="images/ENscreenshot2.PNG" alt="Clobit screenshot 2">
+          <div class="screenshot-card">
+            <img src="images/appstore_v5_02.png" alt="Clobit screenshot 2">
           </div>
         </div>
 
         <div class="mockup-wrapper">
-          <div class="iphone-frame">
-            <img src="images/ENscreenshot3.PNG" alt="Clobit screenshot 3">
+          <div class="screenshot-card">
+            <img src="images/appstore_v5_03.png" alt="Clobit screenshot 3">
           </div>
         </div>
 
         <div class="mockup-wrapper">
-          <div class="iphone-frame">
-            <img src="images/ENscreenshot4.PNG" alt="Clobit screenshot 4">
+          <div class="screenshot-card">
+            <img src="images/appstore_v5_04.png" alt="Clobit screenshot 4">
           </div>
         </div>
 
         <div class="mockup-wrapper">
-          <div class="iphone-frame">
-            <img src="images/ENscreenshot5.PNG" alt="Clobit screenshot 5">
+          <div class="screenshot-card">
+            <img src="images/appstore_v5_05.png" alt="Clobit screenshot 5">
+          </div>
+        </div>
+
+        <div class="mockup-wrapper">
+          <div class="screenshot-card">
+            <img src="images/appstore_v5_06.png" alt="Clobit screenshot 6">
           </div>
         </div>
 
